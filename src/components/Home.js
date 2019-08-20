@@ -1,10 +1,9 @@
 import React from 'react';
-import { Container } from '../styled-components';
+import FiveDay from './FiveDay';
 
-const Home = baseUrl => {
-  const getWeather = () => {};
-
-  return <Container>Hi</Container>;
+const Home = props => {
+  return <FiveDay baseUrl={props.baseUrl} />;
+  // return <FiveDay {...props} />;
 };
 
 export default Home;

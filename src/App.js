@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 
 const App = () => {
-  const [baseUrl] = useState('api.openweathermap.org/data/2.5');
+  const [baseUrl] = useState('https://api.openweathermap.org/data/2.5');
 
   return (
     <Router basename="/">
