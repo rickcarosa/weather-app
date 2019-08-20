@@ -1,8 +1,22 @@
-import React from 'react';
-import { Container } from './styled-components';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
 
-function App() {
-  return <Container>HI</Container>;
-}
+const App = () => {
+  const [baseUrl] = useState('api.openweathermap.org/data/2.5');
+
+  return (
+    <Router basename="/">
+      <Switch>
+        <Route
+          exact
+          path="/"
+          // component={Home}
+          render={() => <Home baseUrl={baseUrl} />}
+        />
+      </Switch>
+    </Router>
+  );
+};
 
 export default App;
