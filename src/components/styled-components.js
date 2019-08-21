@@ -13,8 +13,16 @@ export const Container = styled.div`
 
 export const InnerContainer = styled.div`
   margin: 2rem;
-  border: 2px solid red;
+  border: 2px solid;
+  color: ${props => props.color || 'red'};
   width: 90%;
+  text-align: center;
+`;
+
+export const Title = styled.p`
+  font-size: 2rem;
+  color: black;
+  padding: 20px 0;
 `;
 
 export const Button = styled.button`

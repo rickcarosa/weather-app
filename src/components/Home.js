@@ -1,17 +1,18 @@
-import React from 'react';
-import FiveDay from './FiveDay';
+import React, { useState, useEffect } from 'react';
 import Current from './Current';
-import { Container, Button } from './styled-components';
+import { Container, Button, Title } from './styled-components';
+import { Link } from 'react-router-dom';
 
 const Home = props => {
   return (
     <Container>
-      {/* <FiveDay baseUrl={props.baseUrl} /> */}
       <Current baseUrl={props.baseUrl} />
-      <Button>Five Day Forecast</Button>
+      <Link to="/five-day">
+        <Button>Five Day Forecast</Button>
+      </Link>
     </Container>
   );
-  // return <FiveDay {...props} />
+  // return <Current {...props} />
 };
 
 export default Home;
