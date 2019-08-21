@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Container } from './styled-components';
+import React, { useEffect } from 'react';
+import { InnerContainer } from './styled-components';
 import axios from 'axios';
 
 const FiveDay = ({ baseUrl }) => {
@@ -9,17 +9,15 @@ const FiveDay = ({ baseUrl }) => {
   });
 
   const getWeather = () => {
-    axios
-      .get(
-        `${baseUrl}/forecast?q=Rochester,US&appid${
-          process.env.REACT_APP_APIKEY
-        }`
-      )
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
+    // axios
+    //   .get(
+    //     `${baseUrl}/forecast?id=5134086&appid=${process.env.REACT_APP_APIKEY}`
+    //   )
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err));
   };
 
-  return <Container>Hi</Container>;
+  return <InnerContainer>Hi</InnerContainer>;
 };
 
 export default FiveDay;
