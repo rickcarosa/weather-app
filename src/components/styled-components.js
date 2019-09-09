@@ -20,7 +20,7 @@ export const InnerContainer = styled.div`
 `;
 
 export const Title = styled.p`
-  font-size: 2rem;
+  font-size: 3rem;
   color: black;
   padding: 20px 0;
 `;
@@ -33,4 +33,10 @@ export const Button = styled.button`
   cursor: pointer;
   border: 1px solid grey;
   font-size: 1rem;
+`;
+
+export const Data = styled.p`
+  color: black;
+  font-size: 2rem;
+  padding-bottom: 2rem;
 `;

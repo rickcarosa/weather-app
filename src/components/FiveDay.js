@@ -5,18 +5,16 @@ import { Link, withRouter } from 'react-router-dom';
 
 const FiveDay = props => {
   useEffect(() => {
-    console.log(props.location.pathname);
-    console.log(props);
-    getWeather();
-  });
+    getWeatherForecast();
+  }, []);
 
-  const getWeather = () => {
-    // axios
-    //   .get(
-    //     `${props.baseUrl}/forecast?id=5134086&appid=${process.env.REACT_APP_APIKEY}`
-    //   )
-    //   .then(res => console.log(res))
-    //   .catch(err => console.log(err));
+  const getWeatherForecast = () => {
+    axios
+      .get(
+        `${props.baseUrl}/forecast?id=5134086&appid=${process.env.REACT_APP_APIKEY}`
+      )
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   };
 
   return (

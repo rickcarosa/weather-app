@@ -17,6 +17,9 @@ const App = () => {
           exact
           path="/"
           // component={Home}
+          // {...props}
+          // use render to pass state as props.
+          // you can use component if you didn't have state but rather had props from something like redux.
           render={() => <Home baseUrl={baseUrl} />}
         />
         <Route
