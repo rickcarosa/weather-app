@@ -26,17 +26,23 @@ export const Title = styled.p`
 `;
 
 export const Button = styled.button`
-  padding: 10px 5px;
+  padding: ${props => props.padding || '10px 5px'};
   background: lightblue;
   color: ${props => props.color || '#000'};
   border-radius: 5px;
   cursor: pointer;
   border: 1px solid grey;
   font-size: 1rem;
+  margin-left: ${props => props.marginLeft || 0};
 `;
 
 export const Data = styled.p`
   color: black;
   font-size: 2rem;
   padding-bottom: 2rem;
+`;
+
+export const Input = styled.input`
+  width: 15rem;
+  padding: 5px;
 `;

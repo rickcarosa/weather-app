@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 const Home = props => {
   return (
     <Container>
-      <Current baseUrl={props.baseUrl} />
       <Link to="/five-day">
         <Button>Five Day Forecast</Button>
       </Link>
+      <Current baseUrl={props.baseUrl} />
     </Container>
   );
   // return <Current {...props} />
