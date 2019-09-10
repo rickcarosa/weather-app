@@ -19,6 +19,13 @@ export const InnerContainer = styled.div`
   text-align: center;
 `;
 
+export const ListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+`;
+
 export const Title = styled.p`
   font-size: 3rem;
   color: black;
@@ -34,6 +41,7 @@ export const Button = styled.button`
   border: 1px solid grey;
   font-size: 1rem;
   margin-left: ${props => props.marginLeft || 0};
+  margin-bottom: ${props => props.marginBottom || 0};
 `;
 
 export const Data = styled.p`
@@ -45,4 +53,15 @@ export const Data = styled.p`
 export const Input = styled.input`
   width: 15rem;
   padding: 5px;
+`;
+
+export const Text = styled.p`
+  font-size: 1.5rem;
+  color: black;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
 `;
