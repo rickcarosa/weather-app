@@ -34,6 +34,7 @@ const FiveDay = props => {
     setWeatherList(array);
   };
 
+  // add list to side of page, reset list to empty array and text to empty string in input
   const handleSaveList = () => {
     setSaveList(weatherList);
     setWeatherList([]);
@@ -69,6 +70,7 @@ const FiveDay = props => {
             value={text}
             placeholder="Weather"
           />
+
           {/* conditional render to show button if text value exits */}
           {text && (
             <Button
@@ -138,7 +140,6 @@ export default FiveDay;
 //     });
 //   };
 
-//   // push input value to array and clear input box on submit
 //   addWeather = () => {
 //     this.state.weatherList.push(this.state.text);
 //     this.setState({
@@ -147,7 +148,6 @@ export default FiveDay;
 //     });
 //   };
 
-//   // remove item from list, and only that value if there is a duplicate (by index)
 //   deleteWeather = index => {
 //     let array = this.state.weatherList.filter((_, i) => i !== index);
 //     this.setState({
@@ -193,7 +193,7 @@ export default FiveDay;
 //               value={this.state.text}
 //               placeholder="Weather"
 //             />
-//             {/* conditional render to show button if text value exits */}
+
 //             {this.state.text && (
 //               <Button
 //                 padding="5px 5px"
@@ -205,7 +205,6 @@ export default FiveDay;
 //             )}
 //           </div>
 
-//           {/* conditional render to show list if it has at least one value */}
 //           {this.state.saveList.length > 0 && (
 //             <ListContainer>
 //               {this.state.saveList.map((item, index) => (
@@ -217,7 +216,6 @@ export default FiveDay;
 //           )}
 //         </div>
 
-//         {/* conditional render to show button if list length has at least one value */}
 //         {this.state.weatherList.length > 0 && (
 //           <Button marginBottom="50px" onClick={this.handleSaveList}>
 //             Save
