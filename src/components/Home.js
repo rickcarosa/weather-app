@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Current from './Current';
-import { Container, Button, Title } from './styled-components';
+import { Container, Button } from './styled-components';
 import { Link } from 'react-router-dom';
 
 const Home = props => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // import React, { Component } from 'react';
 import {
   InnerContainer,
@@ -12,7 +12,7 @@ import {
 } from './styled-components';
 import { Link } from 'react-router-dom';
 
-const FiveDay = props => {
+const FiveDay = () => {
   const [text, setText] = useState('');
   const [weatherList, setWeatherList] = useState([]);
   const [saveList, setSaveList] = useState([]);
