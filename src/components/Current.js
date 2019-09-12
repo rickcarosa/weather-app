@@ -5,10 +5,10 @@ import axios from 'axios';
 const Current = props => {
   const [weather, setWeather] = useState(undefined);
 
-  // runs on component mount. empty brackets [] allow this to only run once when the component mounts the first time
+  // runs on component mount
   useEffect(() => {
     getCurrentWeather();
-  }, []);
+  });
 
   const getCurrentWeather = () => {
     axios
