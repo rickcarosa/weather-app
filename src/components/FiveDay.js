@@ -11,6 +11,8 @@ import {
   ListContainer,
 } from './styled-components';
 import { Link } from 'react-router-dom';
+import { IconNames } from '@blueprintjs/icons';
+import { Icon } from '@blueprintjs/core';
 
 const FiveDay = () => {
   const [text, setText] = useState('');
@@ -30,7 +32,7 @@ const FiveDay = () => {
 
   // remove item from list, and only that value if there is a duplicate (by index)
   const deleteWeather = index => {
-    let array = weatherList.filter((_, i) => i !== index);
+    const array = weatherList.filter((_, i) => i !== index);
     setWeatherList(array);
   };
 
@@ -111,7 +113,7 @@ const FiveDay = () => {
             padding="5px"
             onClick={() => deleteWeather(index)}
           >
-            X
+            <Icon icon={IconNames.TRASH} />
           </Button>
         </Row>
       ))}
