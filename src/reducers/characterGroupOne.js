@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const getCharacters = (state = [], action) => {
+const getGroupOneCharacters = (state = [], action) => {
   switch (action.type) {
     case 'FETCH_CHARACTER_GROUP_ONE_FULFILLED':
       return action.payload.data.results;
@@ -24,7 +24,7 @@ const isFetching = (state = false, action) => {
 };
 
 const characterGroupOne = combineReducers({
-  getCharacters,
+  getGroupOneCharacters,
   isFetching,
 });
 
