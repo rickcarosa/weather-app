@@ -58,6 +58,7 @@ export const Input = styled.input`
 export const Text = styled.p`
   font-size: 1.5rem;
   color: black;
+  padding: ${props => props.padding || 0};
 `;
 
 export const Row = styled.div`

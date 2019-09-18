@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 // import React, { Component } from 'react';
-import { Container } from './styled-components';
+import { Container, Button, InnerContainer, Text } from './styled-components';
 import { fetchCharacter } from '../actions/character';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const CharacterBase = ({ fetchCharacter, character }) => {
   useEffect(() => {
@@ -11,7 +12,16 @@ const CharacterBase = ({ fetchCharacter, character }) => {
     }
   });
 
-  return <Container>{character.name}</Container>;
+  return (
+    <Container>
+      <Link to="/">
+        <Button color="red">Home</Button>
+      </Link>
+      <InnerContainer>
+        <Text padding="20px">{character.name}</Text>
+      </InnerContainer>
+    </Container>
+  );
 };
 
 const mapStateToProps = state => ({
