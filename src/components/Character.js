@@ -4,8 +4,9 @@ import { Container, Button, InnerContainer, Text } from './styled-components';
 import { fetchCharacter } from '../actions/character';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Spinner } from '@blueprintjs/core';
 
-const CharacterBase = ({ fetchCharacter, character }) => {
+const CharacterBase = ({ fetchCharacter, character, isFetching }) => {
   useEffect(() => {
     if (character.length === 0) {
       fetchCharacter();
@@ -17,8 +18,9 @@ const CharacterBase = ({ fetchCharacter, character }) => {
       <Link to="/">
         <Button color="red">Home</Button>
       </Link>
-      <InnerContainer>
-        <Text padding="20px">{character.name}</Text>
+      <InnerContainer padding="2rem">
+        {isFetching && <Spinner />}
+        {!isFetching && <Text>{character.name}</Text>}
       </InnerContainer>
     </Container>
   );
@@ -26,6 +28,7 @@ const CharacterBase = ({ fetchCharacter, character }) => {
 
 const mapStateToProps = state => ({
   character: state.character.getCharacter,
+  isFetching: state.character.isFetching,
 });
 
 const Character = connect(

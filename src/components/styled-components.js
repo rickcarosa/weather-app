@@ -17,6 +17,7 @@ export const InnerContainer = styled.div`
   color: ${props => props.color || 'red'};
   width: 90%;
   text-align: center;
+  padding: ${props => props.padding || 0};
 `;
 
 export const ListContainer = styled.div`
