@@ -9,6 +9,9 @@ const Home = props => {
       <Link to="/five-day">
         <Button>Five Day Forecast</Button>
       </Link>
+      <Link to="/character">
+        <Button>Character</Button>
+      </Link>
       <Current baseUrl={props.baseUrl} />
     </Container>
   );
