@@ -3,7 +3,6 @@ import { combineReducers } from 'redux';
 const getCharacter = (state = [], action) => {
   switch (action.type) {
     case 'FETCH_CHARACTER_FULFILLED':
-      console.log('hi', action.payload);
       return action.payload.data;
     case 'FETCH_CHARACTER_REJECTED':
       return [];
