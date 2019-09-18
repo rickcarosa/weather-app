@@ -1,6 +1,6 @@
 import * as api from '../api/character';
 
-export const fetchCharacter = () => ({
-  type: 'FETCH_CHARACTER',
-  payload: api.fetchCharacter(),
+export const fetchCharacterGroupOne = () => ({
+  type: 'FETCH_CHARACTER_GROUP_ONE',
+  payload: api.fetchCharacterGroupOne(),
 });
