@@ -48,6 +48,9 @@ const FiveDay = () => {
       <Link to="/">
         <Button color="red">Home</Button>
       </Link>
+      <Link to="/character">
+        <Button color="red">Character</Button>
+      </Link>
       <InnerContainer color="black">
         <Title>Five Day Weather</Title>
       </InnerContainer>
