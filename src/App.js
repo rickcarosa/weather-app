@@ -7,10 +7,6 @@ import Character from './components/Character';
 const App = () => {
   const [baseUrl] = useState('https://api.openweathermap.org/data/2.5');
 
-  // useEffect(() => {
-  //   console.log(props.location.pathname)
-  // })
-
   return (
     <Router basename="/">
       <Switch>
