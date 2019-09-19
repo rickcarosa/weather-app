@@ -3,7 +3,7 @@ import { InnerContainer, Title, Data } from './styled-components';
 import axios from 'axios';
 
 const Current = props => {
-  const [weather, setWeather] = useState(undefined);
+  const [weather, setWeather] = useState();
 
   // runs on component mount
   useEffect(() => {
