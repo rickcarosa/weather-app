@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 
+export const MainContainer = styled.div`
+  display: flex;
+  height: 100%;
+  width: 100%;
+`;
+
 export const Container = styled.div`
   height: 100%;
+  width: 90%;
   margin: 2rem;
   color: red;
   border: 2px solid blue;
@@ -9,6 +16,8 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 2rem;
+  margin-top: 110px;
+  overflow: auto;
 `;
 
 export const InnerContainer = styled.div`
