@@ -17,7 +17,7 @@ export const Container = styled.div`
   flex-direction: column;
   padding: 2rem;
   margin-top: 110px;
-  overflow: auto;
+  margin-left: 14rem;
 `;
 
 export const InnerContainer = styled.div`

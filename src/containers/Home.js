@@ -1,7 +1,8 @@
 import React from 'react';
-import Current from './Current';
-import { Container, Button } from './styled-components';
+import Current from '../components/Current';
+import { Container, Button } from '../components/styled-components';
 import { NavLink } from 'react-router-dom';
+import Role from '../components/Role';
 
 const Home = props => {
   return (
@@ -13,6 +14,7 @@ const Home = props => {
           <Button>Character</Button>
         </NavLink>
         <Current baseUrl={props.baseUrl} />
+        {props.role === "ADMIN" ? <Role role={props.role}/> : <div>Nothing to see</div>}
       </Container>
     
   );
