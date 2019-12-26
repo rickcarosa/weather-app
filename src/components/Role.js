@@ -8,7 +8,9 @@ const {role} = props
         {
             {
                 ADMIN: (
+                    // jsx elements need to have one wrapper so you use react fragments to wrap multiple elements
                     <>
+                        <Button> ADMIN </Button>
                         <Button> ADMIN </Button>
                     </>
                 ),
