@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import React, { Component } from 'react';
 import {
   InnerContainer,
@@ -9,15 +9,33 @@ import {
   Text,
   Row,
   ListContainer,
+  Table,
+  TableHeader,
+  TableRow,
+  TableData
 } from './styled-components';
 import { Link } from 'react-router-dom';
 import { IconNames } from '@blueprintjs/icons';
 import { Icon } from '@blueprintjs/core';
+import {connect} from 'react-redux';
+import {fetchCharacterGroupOne} from '../actions/groupOne';
+import Pagination from './Pagination';
 
-const FiveDay = () => {
+
+const TableHeaders = ["One", "Two", "Three", "Four", "Five"];
+const Data = [1,2,3,4,5]
+
+const FiveDay = ({groupOne, fetchCharacterGroupOne}) => {
   const [text, setText] = useState('');
   const [weatherList, setWeatherList] = useState([]);
   const [saveList, setSaveList] = useState([]);
+  const [perPage, setPerPage] = useState(10);
+  const [pageCount, setPageCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    fetchCharacterGroupOne();
+  }, [fetchCharacterGroupOne, perPage])
 
   const handleTextChange = e => {
     setText(e.target.value);
@@ -42,6 +60,13 @@ const FiveDay = () => {
     setWeatherList([]);
     setText('');
   };
+
+  const handleNumPerPageChange = (perPage) => {
+    setPerPage(perPage.value)
+    setPageCount(Math.ceil(groupOne.length/perPage.value));
+  }
+
+  
 
   return (
     <Container>
@@ -120,11 +145,60 @@ const FiveDay = () => {
           </Button>
         </Row>
       ))}
+
+      <Table>
+        <tbody>
+          <TableRow>
+          {TableHeaders.map((header, i) => (
+            <TableHeader key={i}>
+              {header}
+            </TableHeader>
+          ))}
+          </TableRow>
+          <TableRow>
+            {Data.map((data, i) => (
+              <TableData key={i}>
+                {data}
+              </TableData>
+            ))}
+          </TableRow>
+        </tbody>
+      </Table>
+      <br/>
+      <br/>
+      <br/>
+      <Table>
+        <tbody>
+            {groupOne.map((name, i) => (
+              <TableRow key={i}>
+                  <TableData>
+                    {name.name}
+                  </TableData>
+                  <TableData>
+                    {name.gender}
+                  </TableData>
+              </TableRow>
+            ))}
+        </tbody>
+      </Table>
+
+      <Pagination
+        perPage={perPage}
+        handleNumPerPageChange={handleNumPerPageChange}
+        pageCount={pageCount}
+      />
+
+
     </Container>
   );
 };
 
-export default FiveDay;
+const mapStateToProps = state => ({
+  groupOne: state.characterGroupOne.getGroupOneCharacters,
+});
+
+
+export default connect(mapStateToProps, {fetchCharacterGroupOne}) (FiveDay);
 
 // this will work the same as above just written as a class component.
 

@@ -27,6 +27,7 @@ export const InnerContainer = styled.div`
   width: 90%;
   text-align: center;
   padding: ${props => props.padding || 0};
+  background: ${props => props.background || '#fff'};
 `;
 
 export const ListContainer = styled.div`
@@ -75,4 +76,30 @@ export const Row = styled.div`
   display: flex;
   align-items: center;
   margin: 10px 0;
+`;
+
+export const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+`;
+
+export const TableHeader = styled.th`
+  color: black;
+  margin-bottom: 0.5rem;
+  padding: 20px;
+  text-align: left;
+`;
+
+export const TableRow = styled.tr`
+  width: 100%;
+  border: 1px solid grey;
+  background: '#fff';
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+export const TableData = styled.td`
+  color: grey;
+  padding: 20px;
 `;

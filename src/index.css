@@ -1,5 +1,6 @@
 @import '~@blueprintjs/core/lib/css/blueprint.css';
 @import '~@blueprintjs/icons/lib/css/blueprint-icons.css';
+@import '~@blueprintjs/table/lib/css/table.css';
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -130,3 +131,48 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+.bp3-table-bottom-container {
+  width: 100% !important;
+}
+
+.pagination-button {
+  margin-right: 2rem;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border: 1px solid grey;
+  width: 50%;
+  border-right: none;
+  padding-left: 2rem;
+}
+
+.pagination-page {
+  padding: 5px;
+  margin-right: 3px;
+  margin-left: 3px
+}
+
+.active-page {
+  border: 1px solid grey;
+  font-weight: bold;
+}
+
+.pagination-previous, .pagination-next {
+  padding: 5px;
+  border: 1px solid grey;
+}
+
+.pagination-previous {
+  margin-right: 5px;
+}
+
+.pagination-next {
+  margin-left: 5px;
+}
+
+
+
