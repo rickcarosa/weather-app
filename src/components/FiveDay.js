@@ -16,11 +16,11 @@ import {
 } from './styled-components';
 import { Link } from 'react-router-dom';
 import { IconNames } from '@blueprintjs/icons';
-import { Icon } from '@blueprintjs/core';
+import { Icon, Intent } from '@blueprintjs/core';
 import {connect} from 'react-redux';
 import {fetchCharacterGroupOne} from '../actions/groupOne';
 import Pagination from './Pagination';
-
+import AppToast from './Toast';
 
 const TableHeaders = ["One", "Two", "Three", "Four", "Five"];
 const Data = [1,2,3,4,5]
@@ -34,7 +34,19 @@ const FiveDay = ({groupOne, fetchCharacterGroupOne}) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
-    fetchCharacterGroupOne();
+    fetchCharacterGroupOne().then(res => {
+      // intents are PRIMARY, DANGER, SUCCESS, WARNING. blue, red, green, orange
+      // this wouldn't go in the useEffect regularly. but error can be used in catch to show message from server
+      AppToast.show({
+        message: 'Found them!',
+        intent: Intent.SUCCESS
+      })
+    }).catch(
+      AppToast.show({
+        message: "No Characters",
+        intent: Intent.DANGER
+      })
+    )
   }, [fetchCharacterGroupOne, perPage])
 
   const handleTextChange = e => {

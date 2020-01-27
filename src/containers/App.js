@@ -13,29 +13,27 @@ const App = () => {
 
   return (
     <Router basename="/">
-      
-      <Navigation/>
+      <Navigation />
       <Switch>
         <MainContainer>
-          <Sidebar/>
-            <Route
-              exact
-              path="/"
-              // component={Home}
-              // {...props}
-              // use render to pass state as props.
-              // you can use component if you didn't have state but rather had props from something like redux.
-              render={() => <Home baseUrl={baseUrl} role={role} />}
-            />
-            <Route
-              exact
-              path="/five-day"
-              render={() => <FiveDay baseUrl={baseUrl} />}
-            />
-            <Route exact path="/character" component={Character} />
+          <Sidebar />
+          <Route
+            exact
+            path="/"
+            // component={Home}
+            // {...props}
+            // use render to pass state as props.
+            // you can use component if you didn't have state but rather had props from something like redux.
+            render={() => <Home baseUrl={baseUrl} role={role} />}
+          />
+          <Route
+            exact
+            path="/five-day"
+            render={() => <FiveDay baseUrl={baseUrl} />}
+          />
+          <Route exact path="/character" component={Character} />
         </MainContainer>
       </Switch>
-      
     </Router>
   );
 };

@@ -14,7 +14,7 @@ const logger = createLogger({
 const configureStore = () => {
   const store = createStore(
     rootReducer,
-    composeEnhancers(applyMiddleware(thunk, promise, logger))
+    composeEnhancers(applyMiddleware(promise, logger))
   );
 
   return store;

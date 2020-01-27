@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Navigation = () => {
-    return(
-        <Container>
-            <Button>Name here</Button>
-            <Box></Box>
-        </Container>
-    )
-}
+  return (
+    <Container>
+      <Button>Name here</Button>
+      <Box></Box>
+    </Container>
+  );
+};
 
 const Container = styled.div`
     width: 100%
@@ -23,16 +23,16 @@ const Container = styled.div`
 `;
 
 const Button = styled.button`
-    font-size: 1rem;
-    padding: 8px 8px;
-    background: red;
-    color: #fff;
+  font-size: 1rem;
+  padding: 8px 8px;
+  background: red;
+  color: #fff;
 `;
 
 const Box = styled.div`
-    width: 30px;
-    height: 30px;
-    border: 1px solid red;
+  width: 30px;
+  height: 30px;
+  border: 1px solid red;
 `;
 
 export default Navigation;

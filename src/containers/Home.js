@@ -7,18 +7,21 @@ import TableComp from '../components/TableComp';
 
 const Home = props => {
   return (
-      <Container>
-        <NavLink to="/five-day">
-          <Button>Five Day Forecast</Button>
-        </NavLink>
-        <NavLink to="/character">
-          <Button>Character</Button>
-        </NavLink>
-        <Current baseUrl={props.baseUrl} />
-        {props.role === "ADMIN" ? <Role role={props.role}/> : <div>Nothing to see</div>}
-        <TableComp/>
-      </Container>
-    
+    <Container>
+      <NavLink to="/five-day">
+        <Button>Five Day Forecast</Button>
+      </NavLink>
+      <NavLink to="/character">
+        <Button>Character</Button>
+      </NavLink>
+      <Current baseUrl={props.baseUrl} />
+      {props.role === 'ADMIN' ? (
+        <Role role={props.role} />
+      ) : (
+        <div>Nothing to see</div>
+      )}
+      <TableComp />
+    </Container>
   );
   // return <Current {...props} />
 };

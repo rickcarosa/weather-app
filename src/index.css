@@ -153,7 +153,7 @@ table {
 .pagination-page {
   padding: 5px;
   margin-right: 3px;
-  margin-left: 3px
+  margin-left: 3px;
 }
 
 .active-page {
@@ -161,7 +161,8 @@ table {
   font-weight: bold;
 }
 
-.pagination-previous, .pagination-next {
+.pagination-previous,
+.pagination-next {
   padding: 5px;
   border: 1px solid grey;
 }
@@ -173,6 +174,3 @@ table {
 .pagination-next {
   margin-left: 5px;
 }
-
-
-

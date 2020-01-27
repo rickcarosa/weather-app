@@ -134,9 +134,9 @@ const mapStateToProps = state => ({
   isFetchingGroupTwo: state.characterGroupTwo.isFetching,
 });
 
-const Character = connect(
-  mapStateToProps,
-  { fetchCharacterGroupOne, fetchCharacterGroupTwo }
-)(CharacterBase);
+const Character = connect(mapStateToProps, {
+  fetchCharacterGroupOne,
+  fetchCharacterGroupTwo,
+})(CharacterBase);
 
 export default Character;
