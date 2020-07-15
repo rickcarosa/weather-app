@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MainContainer = styled.div`
   display: flex;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 `;
 
@@ -23,11 +23,11 @@ export const Container = styled.div`
 export const InnerContainer = styled.div`
   margin: 2rem;
   border: 2px solid;
-  color: ${props => props.color || 'red'};
+  color: ${(props) => props.color || 'red'};
   width: 90%;
   text-align: center;
-  padding: ${props => props.padding || 0};
-  background: ${props => props.background || '#fff'};
+  padding: ${(props) => props.padding || 0};
+  background: ${(props) => props.background || '#fff'};
 `;
 
 export const ListContainer = styled.div`
@@ -44,15 +44,15 @@ export const Title = styled.p`
 `;
 
 export const Button = styled.button`
-  padding: ${props => props.padding || '10px 5px'};
+  padding: ${(props) => props.padding || '10px 5px'};
   background: lightblue;
-  color: ${props => props.color || '#000'};
+  color: ${(props) => props.color || '#000'};
   border-radius: 5px;
   cursor: pointer;
   border: 1px solid grey;
   font-size: 1rem;
-  margin-left: ${props => props.marginLeft || 0};
-  margin-bottom: ${props => props.marginBottom || 0};
+  margin-left: ${(props) => props.marginLeft || 0};
+  margin-bottom: ${(props) => props.marginBottom || 0};
 `;
 
 export const Data = styled.p`
@@ -69,7 +69,7 @@ export const Input = styled.input`
 export const Text = styled.p`
   font-size: 1.5rem;
   color: black;
-  padding: ${props => props.padding || 0};
+  padding: ${(props) => props.padding || 0};
 `;
 
 export const Row = styled.div`

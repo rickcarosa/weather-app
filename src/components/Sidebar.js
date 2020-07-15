@@ -6,14 +6,15 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = () => {
   return (
     <Container>
-      <NavbarLink link="/" text="Home" icon="home" />
-      <NavbarLink link="/five-day" text="Five Day" icon="cloud" />
-      <NavbarLink link="/character" text="Character" icon="person" />
+      <NavbarLink link='/' text='Home' icon='home' />
+      <NavbarLink link='/five-day' text='Five Day' icon='cloud' />
+      <NavbarLink link='/character' text='Character' icon='person' />
+      <NavbarLink link='/bar' text='Bar' icon='chart' />
     </Container>
   );
 };
 
-const NavbarLink = props => (
+const NavbarLink = (props) => (
   <LinkWrapper to={props.link}>
     <NavIcon icon={props.icon} />
     <LinkText>{props.text}</LinkText>

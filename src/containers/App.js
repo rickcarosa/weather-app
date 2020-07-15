@@ -5,6 +5,7 @@ import FiveDay from '../components/FiveDay';
 import Character from '../components/Character';
 import Navigation from '../components/Navigation';
 import { MainContainer } from '../components/styled-components';
+import Bar from '../components/Bar';
 import Sidebar from '../components/Sidebar';
 
 const App = () => {
@@ -12,14 +13,14 @@ const App = () => {
   const [role] = useState('ADMIN');
 
   return (
-    <Router basename="/">
+    <Router basename='/'>
       <Navigation />
       <Switch>
         <MainContainer>
           <Sidebar />
           <Route
             exact
-            path="/"
+            path='/'
             // component={Home}
             // {...props}
             // use render to pass state as props.
@@ -28,10 +29,11 @@ const App = () => {
           />
           <Route
             exact
-            path="/five-day"
+            path='/five-day'
             render={() => <FiveDay baseUrl={baseUrl} />}
           />
-          <Route exact path="/character" component={Character} />
+          <Route exact path='/character' component={Character} />
+          <Route exact path='/bar' component={Bar} />
         </MainContainer>
       </Switch>
     </Router>
