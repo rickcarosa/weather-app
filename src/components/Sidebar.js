@@ -10,6 +10,7 @@ const Sidebar = () => {
       <NavbarLink link='/five-day' text='Five Day' icon='cloud' />
       <NavbarLink link='/character' text='Character' icon='person' />
       <NavbarLink link='/bar' text='Bar' icon='chart' />
+      <NavbarLink link='/export' text='Export' icon='download' />
     </Container>
   );
 };

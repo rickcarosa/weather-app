@@ -5,13 +5,13 @@ import { fetchCharacterGroupOne } from '../actions/groupOne';
 import { connect } from 'react-redux';
 
 const TableCompBase = ({ groupOne, fetchCharacterGroupOne }) => {
-  useEffect(() => {
-    if (groupOne.length === 0) {
-      fetchCharacterGroupOne();
-    }
-  });
+  // useEffect(() => {
+  //   if (groupOne.length === 0) {
+  //     fetchCharacterGroupOne();
+  //   }
+  // });
 
-  const cellRenderer = groupOne => {
+  const cellRenderer = (groupOne) => {
     groupOne.map((item, i) => {
       return <Cell>{item.name}</Cell>;
     });
@@ -20,13 +20,13 @@ const TableCompBase = ({ groupOne, fetchCharacterGroupOne }) => {
   return (
     <InnerContainer>
       <Table numRows={groupOne.length}>
-        <Column name="characters" cellRenderer={cellRenderer(groupOne)} />
+        <Column name='characters' cellRenderer={cellRenderer(groupOne)} />
       </Table>
     </InnerContainer>
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   groupOne: state.characterGroupOne.getGroupOneCharacters,
 });
 

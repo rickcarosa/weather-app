@@ -17,7 +17,7 @@ const Chosen = ({ choice, choiceTwo, getWinner }) => {
   return (
     <>
       {(choice.length > 0 || choiceTwo.length > 0) && (
-        <InnerContainer color="black" padding="2rem">
+        <InnerContainer color='black' padding='2rem'>
           <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
             <Text>{choice}</Text>
             {choice.length > 0 && choiceTwo.length > 0 && (
@@ -33,9 +33,9 @@ const Chosen = ({ choice, choiceTwo, getWinner }) => {
 
 const Winner = ({ winner, resetGame }) => {
   return (
-    <InnerContainer padding="0 0 1rem 0">
-      <Text padding="2rem">WINNER</Text>
-      <Text padding="0 0 1rem 0">{winner}!</Text>
+    <InnerContainer padding='0 0 1rem 0'>
+      <Text padding='2rem'>WINNER</Text>
+      <Text padding='0 0 1rem 0'>{winner}!</Text>
       <Button onClick={resetGame}>RESET</Button>
     </InnerContainer>
   );
@@ -52,17 +52,6 @@ const CharacterBase = ({
   const [choice, setChoice] = useState('');
   const [choiceTwo, setChoiceTwo] = useState('');
   const [winner, setWinner] = useState('');
-
-  useEffect(() => {
-    if (groupOne.length === 0) {
-      fetchCharacterGroupOne();
-    }
-  });
-  useEffect(() => {
-    if (groupTwo.length === 0) {
-      fetchCharacterGroupTwo();
-    }
-  });
 
   const chooseGroupOneCharacter = () => {
     // console.log(
@@ -89,13 +78,13 @@ const CharacterBase = ({
 
   return (
     <Container>
-      <Link to="/">
+      <Link to='/'>
         <Button>Home</Button>
       </Link>
-      <Link to="/five-day">
+      <Link to='/five-day'>
         <Button>Five Day</Button>
       </Link>
-      <InnerContainer padding="2rem">
+      <InnerContainer padding='2rem'>
         {isFetchingGroupOne && isFetchingGroupTwo && <Spinner />}
         {!isFetchingGroupOne && !isFetchingGroupTwo && (
           <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
@@ -126,7 +115,7 @@ const CharacterBase = ({
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   groupOne: state.characterGroupOne.getGroupOneCharacters,
   groupTwo: state.characterGroupTwo.getGroupTwoCharacters,
 

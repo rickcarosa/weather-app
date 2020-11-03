@@ -12,20 +12,20 @@ import {
   Table,
   TableHeader,
   TableRow,
-  TableData
+  TableData,
 } from './styled-components';
 import { Link } from 'react-router-dom';
 import { IconNames } from '@blueprintjs/icons';
 import { Icon, Intent } from '@blueprintjs/core';
-import {connect} from 'react-redux';
-import {fetchCharacterGroupOne} from '../actions/groupOne';
+import { connect } from 'react-redux';
+import { fetchCharacterGroupOne } from '../actions/groupOne';
 import Pagination from './Pagination';
 import AppToast from './Toast';
 
-const TableHeaders = ["One", "Two", "Three", "Four", "Five"];
-const Data = [1,2,3,4,5]
+const TableHeaders = ['One', 'Two', 'Three', 'Four', 'Five'];
+const Data = [1, 2, 3, 4, 5];
 
-const FiveDay = ({groupOne, fetchCharacterGroupOne}) => {
+const FiveDay = ({ groupOne, fetchCharacterGroupOne }) => {
   const [text, setText] = useState('');
   const [weatherList, setWeatherList] = useState([]);
   const [saveList, setSaveList] = useState([]);
@@ -33,23 +33,23 @@ const FiveDay = ({groupOne, fetchCharacterGroupOne}) => {
   const [pageCount, setPageCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
 
-  useEffect(() => {
-    fetchCharacterGroupOne().then(res => {
-      // intents are PRIMARY, DANGER, SUCCESS, WARNING. blue, red, green, orange
-      // this wouldn't go in the useEffect regularly. but error can be used in catch to show message from server
-      AppToast.show({
-        message: 'Found them!',
-        intent: Intent.SUCCESS
-      })
-    }).catch(
-      AppToast.show({
-        message: "No Characters",
-        intent: Intent.DANGER
-      })
-    )
-  }, [fetchCharacterGroupOne, perPage])
+  // useEffect(() => {
+  //   fetchCharacterGroupOne().then(res => {
+  //     // intents are PRIMARY, DANGER, SUCCESS, WARNING. blue, red, green, orange
+  //     // this wouldn't go in the useEffect regularly. but error can be used in catch to show message from server
+  //     AppToast.show({
+  //       message: 'Found them!',
+  //       intent: Intent.SUCCESS
+  //     })
+  //   }).catch(
+  //     AppToast.show({
+  //       message: "No Characters",
+  //       intent: Intent.DANGER
+  //     })
+  //   )
+  // }, [fetchCharacterGroupOne, perPage])
 
-  const handleTextChange = e => {
+  const handleTextChange = (e) => {
     setText(e.target.value);
   };
 
@@ -61,7 +61,7 @@ const FiveDay = ({groupOne, fetchCharacterGroupOne}) => {
   };
 
   // remove item from list, and only that value if there is a duplicate (by index)
-  const deleteWeather = index => {
+  const deleteWeather = (index) => {
     const array = weatherList.filter((_, i) => i !== index);
     setWeatherList(array);
   };
@@ -74,21 +74,19 @@ const FiveDay = ({groupOne, fetchCharacterGroupOne}) => {
   };
 
   const handleNumPerPageChange = (perPage) => {
-    setPerPage(perPage.value)
-    setPageCount(Math.ceil(groupOne.length/perPage.value));
-  }
-
-  
+    setPerPage(perPage.value);
+    setPageCount(Math.ceil(groupOne.length / perPage.value));
+  };
 
   return (
     <Container>
-      <Link to="/">
-        <Button color="red">Home</Button>
+      <Link to='/'>
+        <Button color='red'>Home</Button>
       </Link>
-      <Link to="/character">
-        <Button color="red">Character</Button>
+      <Link to='/character'>
+        <Button color='red'>Character</Button>
       </Link>
-      <InnerContainer color="black">
+      <InnerContainer color='black'>
         <Title>Five Day Weather</Title>
       </InnerContainer>
 
@@ -107,18 +105,18 @@ const FiveDay = ({groupOne, fetchCharacterGroupOne}) => {
           }}
         >
           <Input
-            type="text"
+            type='text'
             onChange={handleTextChange}
             value={text}
-            placeholder="Weather"
+            placeholder='Weather'
           />
 
           {/* conditional render to show button if text value exits */}
           {text && (
             <Button
-              type="submit"
-              padding="5px 5px"
-              marginLeft="10px"
+              type='submit'
+              padding='5px 5px'
+              marginLeft='10px'
               onClick={addWeather}
             >
               Add
@@ -140,7 +138,7 @@ const FiveDay = ({groupOne, fetchCharacterGroupOne}) => {
 
       {/* conditional render to show button if list length has at least one value */}
       {weatherList.length > 0 && (
-        <Button marginBottom="50px" onClick={handleSaveList}>
+        <Button marginBottom='50px' onClick={handleSaveList}>
           Save
         </Button>
       )}
@@ -149,8 +147,8 @@ const FiveDay = ({groupOne, fetchCharacterGroupOne}) => {
         <Row key={index}>
           <Text>{item}</Text>
           <Button
-            marginLeft="10px"
-            padding="5px"
+            marginLeft='10px'
+            padding='5px'
             onClick={() => deleteWeather(index)}
           >
             <Icon icon={IconNames.TRASH} />
@@ -161,36 +159,28 @@ const FiveDay = ({groupOne, fetchCharacterGroupOne}) => {
       <Table>
         <tbody>
           <TableRow>
-          {TableHeaders.map((header, i) => (
-            <TableHeader key={i}>
-              {header}
-            </TableHeader>
-          ))}
+            {TableHeaders.map((header, i) => (
+              <TableHeader key={i}>{header}</TableHeader>
+            ))}
           </TableRow>
           <TableRow>
             {Data.map((data, i) => (
-              <TableData key={i}>
-                {data}
-              </TableData>
+              <TableData key={i}>{data}</TableData>
             ))}
           </TableRow>
         </tbody>
       </Table>
-      <br/>
-      <br/>
-      <br/>
+      <br />
+      <br />
+      <br />
       <Table>
         <tbody>
-            {groupOne.map((name, i) => (
-              <TableRow key={i}>
-                  <TableData>
-                    {name.name}
-                  </TableData>
-                  <TableData>
-                    {name.gender}
-                  </TableData>
-              </TableRow>
-            ))}
+          {groupOne.map((name, i) => (
+            <TableRow key={i}>
+              <TableData>{name.name}</TableData>
+              <TableData>{name.gender}</TableData>
+            </TableRow>
+          ))}
         </tbody>
       </Table>
 
@@ -199,18 +189,15 @@ const FiveDay = ({groupOne, fetchCharacterGroupOne}) => {
         handleNumPerPageChange={handleNumPerPageChange}
         pageCount={pageCount}
       />
-
-
     </Container>
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   groupOne: state.characterGroupOne.getGroupOneCharacters,
 });
 
-
-export default connect(mapStateToProps, {fetchCharacterGroupOne}) (FiveDay);
+export default connect(mapStateToProps, { fetchCharacterGroupOne })(FiveDay);
 
 // this will work the same as above just written as a class component.
 
