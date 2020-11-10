@@ -4,14 +4,15 @@ import { Container, Button } from '../components/styled-components';
 import { NavLink } from 'react-router-dom';
 import Role from '../components/Role';
 import TableComp from '../components/TableComp';
+import Star from '../components/Star';
 
-const Home = props => {
+const Home = (props) => {
   return (
     <Container>
-      <NavLink to="/five-day">
+      <NavLink to='/five-day'>
         <Button>Five Day Forecast</Button>
       </NavLink>
-      <NavLink to="/character">
+      <NavLink to='/character'>
         <Button>Character</Button>
       </NavLink>
       <Current baseUrl={props.baseUrl} />
@@ -21,6 +22,7 @@ const Home = props => {
         <div>Nothing to see</div>
       )}
       <TableComp />
+      <Star />
     </Container>
   );
   // return <Current {...props} />
